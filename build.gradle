@@ -1,16 +1,6 @@
 buildscript {
     repositories {
-        mavenCentral()
         jcenter()
-        maven{url'https://repo1.maven.org/maven2/'}
-        //使用开源中国的maven库代替jcenter()
-        //阿里云的(速度飞快)：http://maven.aliyun.com/nexus/content/groups/public/
-        maven {
-            url 'http://maven.aliyun.com/nexus/content/groups/public'
-        }
-        maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
-        maven { url "https://jitpack.io" }
-        mavenLocal()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.2.3'
