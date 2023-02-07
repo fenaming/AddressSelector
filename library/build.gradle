@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'maven-publish'
 
 android {
     compileSdkVersion 28
@@ -29,4 +30,28 @@ dependencies {
     apt "com.github.Raizlabs.DBFlow:dbflow-processor:${dbflow_version}"
     compile "com.github.Raizlabs.DBFlow:dbflow-core:${dbflow_version}"
     compile "com.github.Raizlabs.DBFlow:dbflow:${dbflow_version}"
+}
+
+//afterEvaluate {
+//    publishing {
+//        publications {
+//            release(MavenPublication) {
+//                from components.release
+//                groupId = 'com.fenaming.myaddress' //groupId 随便取
+//                artifactId = 'myaddress'  //artifactId 随便取
+//                version = '1.0.0'
+//            }
+//        }
+//    }
+//}
+
+publishing {
+    publications {
+        release(MavenPublication) {
+//            from components.release
+            groupId = 'com.fenaming.myaddress' //groupId 随便取
+            artifactId = 'myaddress'  //artifactId 随便取
+            version = '1.0.0'
+        }
+    }
 }
